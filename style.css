@@ -1,0 +1,634 @@
+/* Reset & Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    overflow-x: hidden;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+body.fade-in {
+    opacity: 1;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: lightseagreen;
+    gap: 10px;
+    /* space between logo and text */
+}
+
+.logo-img {
+    width: 80px;
+    height: auto;
+}
+
+.logo span {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #00ffd5;
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+
+    /* Background Image */
+    background-image: url('assets/friends3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+}
+
+/* Optional: add overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* dark overlay */
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+/* CTA Button */
+.cta-button {
+    padding: 12px 30px;
+    background-color: #00ffd5;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0affbb;
+    transform: scale(1.05);
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay {
+    transition-delay: 0.4s;
+}
+
+.delay2 {
+    transition-delay: 0.8s;
+}
+
+.donate-options {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 600px;
+    margin: 40px auto 0;
+    padding: 20px;
+    text-align: center;
+}
+
+.donate-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.paypal-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #ffc439;
+    color: #111;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.paypal-button:hover {
+    background-color: #ffb347;
+    transform: translateY(-2px);
+}
+
+.paypal-logo {
+    width: 24px;
+    height: 24px;
+}
+
+
+.donate-box:hover {
+    transform: translateY(-5px);
+}
+
+/*---other styles above---*/
+.info-section {
+    background-color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+    color: #333;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.info-section .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.info-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.info-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.info-section .btn {
+    background-color: #333;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.info-section .btn:hover {
+    background-color: #555;
+}
+
+
+.info-section {
+    background-color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+    color: #333;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.info-section .container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.info-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #111;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    flex: 1 1 300px;
+    max-width: 320px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.card p {
+    font-size: 16px;
+    color: #555;
+}
+
+.card .icon {
+    margin-bottom: 10px;
+}
+
+.card .icon svg {
+    height: 48px;
+    width: 48px;
+}
+
+.contact-section {
+    padding: 80px 20px;
+    background: #f4f7fa;
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.contact-section .subtext {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.contact-form .form-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    background: transparent;
+}
+
+.contact-form label {
+    position: absolute;
+    top: 14px;
+    left: 12px;
+    color: #999;
+    font-size: 14px;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.contact-form input:focus+label,
+.contact-form input:not(:placeholder-shown)+label,
+.contact-form textarea:focus+label,
+.contact-form textarea:not(:placeholder-shown)+label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: #3498db;
+    background: #f4f7fa;
+    padding: 0 4px;
+}
+
+.send-btn {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.send-btn:hover {
+    background: #2c80b4;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-block {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+    color: #333;
+}
+
+.info-block svg {
+    flex-shrink: 0;
+}
+
+.contact-section {
+    padding: 100px 20px;
+    background: #f9fbfd;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: fadeIn 1.2s ease;
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.contact-section .subtext {
+    text-align: center;
+    color: #777;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    animation: slideUp 1s ease;
+}
+
+.contact-form .form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form label {
+    margin-bottom: 8px;
+    display: block;
+    font-weight: bold;
+    color: #444;
+}
+
+.send-btn {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.send-btn:hover {
+    background: #2c80b4;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    animation: fadeInRight 1s ease;
+}
+
+.info-block {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 17px;
+    color: #444;
+}
+
+.info-block svg {
+    flex-shrink: 0;
+    color: #3498db;
+    font-size: 20px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+}
+
+.donate-hero {
+    background-image: url("images/sunrise-orphan.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.donation-options {
+    padding: 80px 20px;
+    background: #f9fbfd;
+    text-align: center;
+}
+
+.options-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.option-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    max-width: 360px;
+    width: 100%;
+    transition: transform 0.3s;
+}
+
+.option-card:hover {
+    transform: translateY(-5px);
+}
+
+.option-card img {
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+.bank-details p {
+    margin: 6px 0;
+    font-weight: 500;
+    color: #333;
+}
+
+.btn {
+    background: #3498db;
+    color: #fff;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #2c80b4;
+}
+
+.contact-logo {
+    display: block;
+    margin: 0 auto 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.contact-section {
+    text-align: center;
+    padding: 10px;
+}
+
+.programs-hero {
+    background-image: url("assets/sunrise-orphan.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+}
